@@ -7,7 +7,15 @@ import (
 
 func main() {
 	println("Hello, Go!")
-	fmt.Println(Test3(4))
+	fmt.Println(DeferReturnV0())
+	fmt.Println(DeferReturnV1())
+}
+
+func Test3() (a int) {
+	defer func() {
+		a = 0
+	}()
+	return a
 }
 
 func Hello() {
@@ -37,9 +45,18 @@ func Test2() int {
 	return a
 }
 
-func Test3(a int) int {
-	defer func(a int) {
+func DeferReturnV0() int {
+	a := 1
+	defer func() {
 		a = 0
-	}(a)
+	}()
+	return a
+}
+
+func DeferReturnV1() (a int) {
+	a = 1
+	defer func() {
+		a = 0
+	}()
 	return a
 }
