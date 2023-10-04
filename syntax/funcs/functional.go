@@ -33,3 +33,14 @@ func Func6Invoke() {
 	println(fn1("wer"))
 	println(fn2(2))
 }
+
+func SwitchFunc(i int) {
+	switch i {
+	case 23:
+		println("23")
+		fallthrough
+	case 24:
+		println("24")
+
+	}
+}
