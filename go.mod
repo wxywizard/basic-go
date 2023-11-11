@@ -1,3 +1,3 @@
-module basic-go
+module Dengming-go/basic-go
 
-go 1.21.1
+go 1.21.4
